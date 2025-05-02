@@ -1,20 +1,10 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'screens/login_page.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'app/app.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Diamond App',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginPage(), // or use named route if you prefer
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  runApp(const App());
 }
