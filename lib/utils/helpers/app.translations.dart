@@ -5,6 +5,7 @@ class AppTranslations extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           "name": "Name",
+          'customerId': 'Customer ID',
           "password": "Password",
           "login": "Login",
           "@safeTechnologies": "@SafeTechnologies",

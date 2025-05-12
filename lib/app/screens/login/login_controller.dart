@@ -21,6 +21,8 @@ class LoginController extends GetxController {
     try {
       final response = await ApiRepository.instance.login(
           textEditingControllerCustomerId.value, textEditingControllerPassword.value);
+   
+    
       if (response["found"] == true) {
         
 
@@ -31,11 +33,12 @@ class LoginController extends GetxController {
           "User found",
           snackPosition: SnackPosition.BOTTOM,
         );
-        Get.offAndToNamed(AppRoutes.diamondDataRoute);
+        Get.offAndToNamed(AppRoutes.homeRoute);
       } else {
         Get.snackbar(
           response["message"],
-          response["subtitle"],
+          'Please try again.',
+          // response["subtitle"],
           snackPosition: SnackPosition.BOTTOM,
           duration: const Duration(seconds: 2),
         );

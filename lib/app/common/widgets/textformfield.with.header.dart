@@ -11,14 +11,13 @@ class TextFormFieldWithHeader extends StatelessWidget {
   final String? Function(String?) validator;
   void Function(String)? onChanged;
   TextFormFieldWithHeader(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.textEditingController,
       required this.hintText,
       required this.textInputType,
       required this.validator,
-      this.onChanged})
-      : super(key: key);
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {

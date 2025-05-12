@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class LoginScreen extends StatelessWidget {
               // ),
                Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimension.kPadding,
+                  horizontal: AppDimension.mediumPadding,
                   vertical: AppDimension.kPadding / 8,
                 ),
                 child: Text(
@@ -61,7 +61,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: AppDimension.kPadding),
+                    horizontal: AppDimension.mediumPadding),
                 child: Text(
                   "pleaseFillInCredentialsToContinue".tr,
                   style: textTheme.bodySmall,
@@ -70,15 +70,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: AppDimension.kPadding * 2),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: AppDimension.kPadding),
+                    horizontal: AppDimension.mediumPadding),
                 child: Text(
-                  "name".tr,
+                 'customerId'.tr,
                   style: textTheme.bodySmall,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimension.kPadding,
+                  horizontal: AppDimension.mediumPadding,
                   vertical: AppDimension.kPadding / 4,
                 ),
                 child: TextFormField(
@@ -101,7 +101,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: AppDimension.kPadding),
+                    horizontal: AppDimension.mediumPadding),
                 child: Text(
                   "password".tr,
                   style: textTheme.bodySmall,
@@ -109,7 +109,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimension.kPadding,
+                  horizontal: AppDimension.mediumPadding,
                   vertical: AppDimension.kPadding / 4,
                 ),
                 child: TextFormField(
@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(AppDimension.kPadding),
+                  padding: const EdgeInsets.all(AppDimension.mediumPadding),
                   child: Obx(
                     () => loginController.isLoading.value
                         ? const CircularProgressIndicator()
@@ -154,6 +154,7 @@ class LoginScreen extends StatelessWidget {
                                   : null,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
+                                    
                                     vertical: AppDimension.kPadding - 2),
                                 child: Text(
                                   "login".tr,

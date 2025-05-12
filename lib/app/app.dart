@@ -1,7 +1,7 @@
 import 'package:diamond_data/app/routes/app.pages.dart';
 import 'package:diamond_data/app/routes/app.routes.dart';
 import 'package:diamond_data/app/services/storage_service.dart';
-import 'package:diamond_data/app/themes/app.theme.dart';
+import 'package:diamond_data/app/themes/light_theme.dart';
 import 'package:diamond_data/utils/helpers/app.translations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '../utils/constants/app.constants.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       if (StorageService.instance.fetch(AppConstants.userKey).isEmpty) {
         return AppRoutes.loginRoute;
       } else {
-        return AppRoutes.diamondDataRoute;
+        return AppRoutes.homeRoute;
       }
     }
 
@@ -28,7 +28,7 @@ class App extends StatelessWidget {
       navigatorKey: Get.key,
       debugShowCheckedModeBanner: false,
       title: 'Balance report',
-      theme: AppTheme.lightTheme,
+      theme: diamondAppTheme,
       translations: AppTranslations(),
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('en', 'US'),

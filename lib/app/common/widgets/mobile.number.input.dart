@@ -4,7 +4,7 @@ import 'package:diamond_data/utils/constants/app.dimensions.dart';
 import 'package:flutter/material.dart';
 
 class MobileNumberInputField extends StatefulWidget {
-  const MobileNumberInputField({Key? key}) : super(key: key);
+  const MobileNumberInputField({super.key});
 
   @override
   State<MobileNumberInputField> createState() => _MobileNumberInputFieldState();

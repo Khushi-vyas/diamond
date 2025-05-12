@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../Models/diamond_model.dart';
 
-class DiamondDataController extends GetxController {
+class SelectFiltersController extends GetxController {
   final isLoading = false.obs;
   var diamondDataList = [].obs;
   final page = 1.obs;
@@ -11,12 +11,10 @@ class DiamondDataController extends GetxController {
   final totalPages = 0.obs;
 
   final isLastPage = false.obs;
-  var checkboxSelections = <RxBool>[].obs;
 
   @override
   void onInit() {
-    getAllDiamondData();
-
+    // getAllDiamondData();
     super.onInit();
   }
 
@@ -57,9 +55,6 @@ class DiamondDataController extends GetxController {
         diamondDataList.addAll(
             response['diamonds'].map((e) => Diamond.fromJson(e)).toList());
         totalPages.value = response['totalPages'];
-        checkboxSelections.addAll(
-          List.generate(diamondDataList.length, (_) => true.obs),
-        );
       }
 
       if (page.value >= totalPages.value || response.isEmpty) {
